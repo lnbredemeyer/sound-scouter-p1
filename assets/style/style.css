@@ -7,3 +7,7 @@
     --white: #FFFFFF;
     --border-radius: .3rem;
   }
+
+  body {
+      vertical-align: middle;
+  }
