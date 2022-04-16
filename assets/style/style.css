@@ -1,0 +1,13 @@
+:root {
+    --primary: #232931;
+    --secondary: #393E46;
+    --green: #4ECCA3;
+    --light: #EEEEEE;
+    --black: #000000;
+    --white: #FFFFFF;
+    --border-radius: .3rem;
+  }
+
+  body {
+      vertical-align: middle;
+  }
