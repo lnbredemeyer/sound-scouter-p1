@@ -7,11 +7,11 @@ The purpose behind this project for all of us first and foremost was to not only
 Our app can be used to stream music from your favorite artists as well as purchase tickets for an of their upcoming shows if desired.
 
 ## Credits
-Leah Bredemeyer
-Kevin Doolittle
-KJ Krueger
-Matthew Gonzales
-Nathan Prevallet
+Leah Bredemeyer   
+Kevin Doolittle   
+KJ Krueger   
+Matthew Gonzales   
+Nathan Prevallet   
 
 ## Features
 -Search for music from your favorite artists.
