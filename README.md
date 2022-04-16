@@ -8,9 +8,9 @@ Our app can be used to stream music from your favorite artists as well as purcha
 
 ## Credits
 Leah Bredemeyer   
-Kevin Doolittle  
-KJ Krueger  
-Matthew Gonzales  
+Kevin Doolittle   
+KJ Krueger   
+Matthew Gonzales   
 Nathan Prevallet  
 
 ## Features
