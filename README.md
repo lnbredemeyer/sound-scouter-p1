@@ -11,7 +11,7 @@ Leah Bredemeyer
 Kevin Doolittle   
 KJ Krueger   
 Matthew Gonzales   
-Nathan Prevallet   
+Nathan Prevallet  
 
 ## Features
 -Search for music from your favorite artists.
