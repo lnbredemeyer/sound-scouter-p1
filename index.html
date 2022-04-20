@@ -1,23 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <title>Document</title>
-</head>
-<body>
-    <form class="box is-justify-content-center">
-        <div class="field">
-          <label class="label">Search: </label>
-          <div class="control">
-            <input class="input" type="email" placeholder="**************">
-          </div>
-        </div>
-        <button class="button is-primary">Search</button>
-      </form>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sound Scouter</title>
+    <link rel="stylesheet" href="./assets/style/style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    
+    <div class="box">
+      <div class="control columns is-mobile">
+        <figure class="image is-128x128 is-3">
+          <img
+            class="is-rounded"
+            src="./assets/Logo/Logo-1 copy.png"
+          />
+        </figure>
+        <input class="input is-9" type="text" placeholder="Text input" />
+      </div>
+    </div>
+    
+    <div id="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <td>#</td>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box">This box contains a description of the chosen show from the table.</div>
+
+    <div class="container">
+      <div class="notification is-primary">
+        <p>
+          This will contain the YT music controls.
+        </p>
+      </div>
+    </div>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
