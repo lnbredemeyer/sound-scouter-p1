@@ -16,6 +16,32 @@ function getApi(search) {
 
 getApi();
 
+      //matts js section
+      
+      var searchButton = document.getElementById('searchBtn');
+      var artistSearchEl = document.getElementById('searchInput');
+
+     
+        var artistSearch = artistSearchEl.value;
+
+    
+
+      function onSearch(searchValue) {
+        var apiKey = "AIzaSyCuNTqQtkfcWjytPVICr5fVqitxVXURwHQ"
+        var requestURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + artistSearch + "key=" + apiKey
+        fetch(requestURL)
+                .then(function (response) {
+                    console.log(response);
+                    return response.json();
+                }
+       
+                )};
+              searchButton.addEventListener('click' , onSearch);
+
+         
+
+      // video player  below
+      searchButton.addEventListener("click", getApi);
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
