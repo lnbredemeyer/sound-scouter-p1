@@ -1,87 +1,57 @@
-var eventList = document.querySelector('ul');
-var eventSearch = document.getElementById('search-button');
+function getApi() {
 
-function getApi(search) {
-    var searchTerm = 'keyword= ' + search
-    var requestUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=wZgkpanEfNFtRCE9bOFAr2ivj5h3evSw'
+    var eventList = document.querySelector('ul');
+    var eventSearch = document.getElementById('searchInput').value;
+
+    var searchTerm = 'keyword= ' + eventSearch; //;eventSearch;
+    var requestUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?size=5&countryCode=US&' + searchTerm + '&apikey=wZgkpanEfNFtRCE9bOFAr2ivj5h3evSw';
 
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+
+            var table = document.getElementById('table-body');
+            table.innerHTML = '';
+
+            for (var i = 0; i < data._embedded.events.length; i++) {
+
+                //Event
+                var event = data._embedded.events[i];
+
+                //Create table row
+                var tr = document.createElement('tr');
+                var name = document.createElement('td');
+                var date = document.createElement('td');
+                var time = document.createElement('td');
+
+                //create details btn
+                var details = document.createElement('button');
+                details.setAttribute('class', 'button is-warning');
+                details.textContent = 'Details';
+                details.setAttribute('onclick', 'getDetails(\'' + event.id + '\')');
+
+
+                //add text to td
+                name.textContent = event.name;
+                date.textContent = event.dates.start.localDate;
+                time.textContent = event.dates.start.localTime;
+
+                tr.append(name);
+                tr.append(date);
+                tr.append(time);
+                tr.append(details);
+
+                table.append(tr);
+
+            }
+
         })
+
+
 }
 
-getApi();
 
-      //matts js section
-      
-      var searchButton = document.getElementById('searchBtn');
-      var artistSearchEl = document.getElementById('searchInput');
 
-     
-        var artistSearch = artistSearchEl.value;
 
-    
-
-      function onSearch(searchValue) {
-        var apiKey = "AIzaSyCuNTqQtkfcWjytPVICr5fVqitxVXURwHQ"
-        var requestURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + artistSearch + "key=" + apiKey
-        fetch(requestURL)
-                .then(function (response) {
-                    console.log(response);
-                    return response.json();
-                }
-       
-                )};
-              searchButton.addEventListener('click' , onSearch);
-
-         
-
-      // video player  below
-      searchButton.addEventListener("click", getApi);
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          playerVars: {
-            'playsinline': 1
-          },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
