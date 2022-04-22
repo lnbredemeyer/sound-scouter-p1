@@ -89,7 +89,6 @@ function getDetails(id) {
         })
 }
 
-
 //matts js section
 
 var searchButton = document.getElementById("searchBtn");
@@ -99,28 +98,28 @@ var artistSearchEl = document.getElementById("searchInput");
 var PlayerEl = document.getElementById('player');
 
 function onSearch(searchValue) {
-    var artistSearch = artistSearchEl.value;
-    var apiKey = "AIzaSyCuNTqQtkfcWjytPVICr5fVqitxVXURwHQ";
-    var requestURL =
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
-        artistSearch +
-        "&key=" +
-        apiKey;
-    fetch(requestURL)
-        .then(function (response) {
-            console.log(response);
-            return response.json();
-        })
-        .then(function (data) {
-            //gets video ID tag as a variable
-            // PlayerEl = vidIdTag.value;
-            PlayerEl = data.items[0].id.videoId;
-            embed(vidIdTag);
-            console.log(vidIdTag);
-            console.log(data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+  var artistSearch = artistSearchEl.value;
+  var apiKey = "AIzaSyCuNTqQtkfcWjytPVICr5fVqitxVXURwHQ";
+  var requestURL =
+    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
+    artistSearch +
+    "&key=" +
+    apiKey;
+  fetch(requestURL)
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      //gets video ID tag as a variable
+      // PlayerEl = vidIdTag.value;
+      PlayerEl = data.items[0].id.videoId;
+      embed(vidIdTag);
+      console.log(vidIdTag);
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 searchButton.addEventListener("click", onSearch); 
