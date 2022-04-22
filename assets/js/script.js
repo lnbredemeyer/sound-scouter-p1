@@ -112,8 +112,8 @@ function onSearch(searchValue) {
     })
     .then(function (data) {
       //gets video ID tag as a variable
-      // PlayerEl = vidIdTag.value;
-      PlayerEl = data.items[0].id.videoId;
+      
+      vidIdTag = data.items[0].id.videoId;
       embed(vidIdTag);
       console.log(vidIdTag);
       console.log(data);
@@ -123,3 +123,11 @@ function onSearch(searchValue) {
     });
 }
 searchButton.addEventListener("click", onSearch); 
+
+var embed = function(url) {
+  var id = url.split("?v=")[1]; //sGbxmsDFVnE
+  var embedlink = "https://www.youtube.com/embed/" + id; //https://www.youtube.com/embed/sGbxmsDFVnE
+  document.getElementById("myIframe").src = embedlink;
+}
+
+embed("https://www.youtube.com/watch?v=8ZC_CZAq-WI");
