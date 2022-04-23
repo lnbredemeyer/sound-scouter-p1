@@ -48,6 +48,22 @@
   .btn {
       margin: 20px 20px 20px 0;
       padding: 10px;
+<<<<<<< HEAD
+=======
+  }
+
+  .table-container {
+      margin: 20px;
+      padding: 20px;
+  }
+
+  .notification {
+      margin: 20px;
+      padding: 20px;
+  }
+
+  @media screen and (min-width: 640px) {
+>>>>>>> 54037cc35f92953d4d33b0feab15860a27b84132
   }
 
   .table-container {
