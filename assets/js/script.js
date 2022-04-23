@@ -99,7 +99,7 @@ var PlayerEl = document.getElementById('player');
 
 function onSearch(searchValue) {
   var artistSearch = artistSearchEl.value;
-  var apiKey = "AIzaSyCuNTqQtkfcWjytPVICr5fVqitxVXURwHQ";
+  var apiKey = "AIzaSyBZl0T0oj07oGReZTvhJsw6C_FMSq-a3iU";
   var requestURL =
     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
     artistSearch +
@@ -120,14 +120,17 @@ function onSearch(searchValue) {
     })
     .catch(function (error) {
       console.log(error);
+
+      //yt iframe player
+      var embedVid = function(url) {
+        var id = url.split("?v=")[1]; //sGbxmsDFVnE
+        var embedlink = "https://www.youtube.com/embed/" + id; //https://www.youtube.com/embed/sGbxmsDFVnE
+        document.getElementById("myIframe").src = embedlink;
+      }
+      
+      embedVid("https://www.youtube.com/watch?v=" + vidIdTag);
     });
+
+    
 }
 searchButton.addEventListener("click", onSearch); 
-
-var embed = function(url) {
-  var id = url.split("?v=")[1]; //sGbxmsDFVnE
-  var embedlink = "https://www.youtube.com/embed/" + id; //https://www.youtube.com/embed/sGbxmsDFVnE
-  document.getElementById("myIframe").src = embedlink;
-}
-
-embed("https://www.youtube.com/watch?v=8ZC_CZAq-WI");
