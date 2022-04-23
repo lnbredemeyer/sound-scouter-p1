@@ -1,75 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sound Scouter</title>
-    <link rel="stylesheet" href="./assets/style/style.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-  </head>
-  <body>
-    
-    <div class="box">
-      <div class="control columns is-mobile">
-        <figure class="image is-128x128 is-3">
-          <img
-            class="is-rounded"
-            src="./assets/Logo/Logo-1 copy.png"
-          />
-        </figure>
-        <input class="input is-9" type="text" placeholder="Text input" />
-      </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sound Scouter</title>
+  <link rel="stylesheet" href="./assets/style/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+</head>
+
+<body>
+  <div class="box">
+    <div class="control columns is-vcentered">
+      <figure class="image is-3">
+        <img class="is-rounded" src="./assets/Logo/Logo-1 copy.png" />
+      </figure>
+      <input class="input is-7" id="searchInput" type="text" placeholder="Search for singer/band" />
+      <button class="btn is-2" id="searchBtn" onclick="getApi()">Search</button>
     </div>
-    
-    <div id="table-container">
-      <table class="table">
+  </div>
+  <div class="columns">
+    <div class="table-container column is-half">
+      <table class="table is-hoverable is-fullwidth is-centered">
         <thead>
           <tr>
-            <th>City</th>
+            <th>Name</th>
             <th>Date</th>
             <th>Time</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>#</td>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>#</td>
-            <td>#</td>
-          </tr>
+        <tbody id="table-body">
+
+
         </tbody>
       </table>
     </div>
+    <div class="box column is-half" id="eventDesc">Click details on the event after searching to view more details</div>
+  </div>
+  <div class="youtube-container">
+    <div class="notification is-primary"> 
+      <br>
+      <iframe id="myIframe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 
-    <div class="box">This box contains a description of the chosen show from the table.</div>
-
-    <div class="container">
-      <div class="notification is-primary">
-        <p>
-          This will contain the YT music controls.
-        </p>
-      </div>
     </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js%22%3E</script>
     <script src="./assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>
